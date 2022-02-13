@@ -22,7 +22,7 @@
           "to": [
             {
               "set_variable": {
-                "name": "spacefn_mode",
+                "name": "spacevim_mode",
                 "value": 1
               }
             }
@@ -35,7 +35,19 @@
           "to_after_key_up": [
             {
               "set_variable": {
-                "name": "spacefn_mode",
+                "name": "spacevim_mode",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "visual_mode",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
                 "value": 0
               }
             }
@@ -64,7 +76,7 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
             }
           ]
@@ -92,8 +104,54 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         },
@@ -115,8 +173,54 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         },
@@ -138,8 +242,54 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         },
@@ -161,8 +311,54 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         }
@@ -192,9 +388,58 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
+
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+
           ]
         },
         {
@@ -230,8 +475,69 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "option",
+                "shift"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "option",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         },
@@ -256,8 +562,55 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         }
@@ -287,8 +640,55 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
               "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "w",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "option",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         },
@@ -313,7 +713,225 @@
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacefn_mode",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "option",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+v to toggle visual mode, Space+V to toggle linewise visual mode.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "visual_mode",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "visual_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "caps_lock",
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "v",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "caps_lock",
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
               "value": 1
             }
           ]
