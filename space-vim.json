@@ -24,7 +24,10 @@
           },
           "to_if_held_down": [
             {
-              "key_code": "delete_or_backspace"
+              "key_code": "z",
+              "modifiers": [
+                "command"
+              ]
             },
             {
               "set_variable": {
@@ -1460,6 +1463,335 @@
             {
               "type": "variable_if",
               "name": "spacevim_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+gg or Space+G to go to the first or the last line.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "g",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "g",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "on_start",
+                "value": 1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "g",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 500
+          },
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "g",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "g",
+                  "value": 0
+                }
+              }
+            ],
+          "to_if_canceled": [
+            {
+              "set_variable": {
+                "name": "g",
+                "value": 0
+              }
+            }
+          ]
+        },
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "g",
+            "modifiers": {
+              "mandatory": [
+                "shift"
+              ],
+              "optional": [
+                "command",
+                "option",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow",
+              "modifiers": [
+                "command",
+                "shift"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "on_start",
+                "value": -1
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
               "value": 1
             }
           ]
