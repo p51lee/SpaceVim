@@ -1,0 +1,268 @@
+{
+  "title": "SpaceVIM",
+  "rules": [
+    {
+      "description": "SpaceVIM: Space enables SpaceVIM mode, change input source by right command.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "spacebar",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "command",
+                "option",
+                "shift",
+                "right_control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "spacefn_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "spacefn_mode",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+b to Space (hold to repeat)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "b",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+[hjkl] to Left, Down, Up, Right",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "h",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "j",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "down_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "up_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+4 to $(end), Space+6 to ^(jump to 1st non-blank character), Space+0 to 0(home).",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "4",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "6",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command"
+              ]
+            },
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "option"
+              ]
+            },
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "0",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_arrow",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacefn_mode",
+              "value": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
