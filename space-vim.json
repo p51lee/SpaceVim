@@ -1110,7 +1110,7 @@
       ]
     },
     {
-      "description": "SpaceVIM: Space+v to toggle visual mode, Space+V to toggle linewise visual mode.",
+      "description": "SpaceVIM: Space+v to toggle visual mode, Space+V to toggle linewise visual mode. (unstable with empty lines)",
       "manipulators": [
         {
           "type": "basic",
@@ -1392,7 +1392,7 @@
       ]
     },
     {
-      "description": "SpaceVIM: Space+o or Space+shift+o to append a new line above or below.",
+      "description": "SpaceVIM: Space+o or Space+O to append a new line above or below.",
       "manipulators": [
         {
           "type": "basic",
