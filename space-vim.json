@@ -2,7 +2,7 @@
   "title": "SpaceVIM",
   "rules": [
     {
-      "description": "SpaceVIM: Space enables SpaceVIM mode.",
+      "description": "SpaceVIM: Space enables SpaceVIM mode. Press right command to toggle on/off. Do not use with the alternative rule.",
       "manipulators": [
         {
           "type": "basic",
@@ -22,10 +22,7 @@
           "parameters": {
             "basic.to_if_held_down_threshold_milliseconds": 150
           },
-          "to_if_held_down": [
-            {
-              "key_code": "delete_or_backspace"
-            },
+          "to": [
             {
               "set_variable": {
                 "name": "spacevim_mode",
@@ -33,7 +30,7 @@
               }
             }
           ],
-          "to": [
+          "to_if_alone": [
             {
               "key_code": "spacebar"
             }
@@ -62,6 +59,79 @@
                 "name": "on_start",
                 "value": 0
               }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_off",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "option",
+                "shift",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "spacevim_off",
+                "value": 0
+              }
+            },
+            {
+              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SpaceVIM ON --\"'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_off",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "option",
+                "shift",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "spacevim_off",
+                "value": 1
+              }
+            },
+            {
+              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SpaceVIM OFF --\"'"
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_off",
+              "value": 0
             }
           ]
         }
