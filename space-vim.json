@@ -2,7 +2,7 @@
   "title": "SpaceVIM",
   "rules": [
     {
-      "description": "SpaceVIM: Space enables SpaceVIM mode, change input source by right command.",
+      "description": "SpaceVIM: Space enables SpaceVIM mode.",
       "manipulators": [
         {
           "type": "basic",
@@ -30,6 +30,66 @@
           "to_if_alone": [
             {
               "key_code": "spacebar"
+            }
+          ],
+          "to_after_key_up": [
+            {
+              "set_variable": {
+                "name": "spacevim_mode",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "visual_mode",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
+                "value": 0
+              }
+            },
+            {
+              "set_variable": {
+                "name": "on_start",
+                "value": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Right command enables SpaceVIM mode (alternative). Useful if you are a fast typer.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "caps_lock",
+                "left_command",
+                "option",
+                "shift",
+                "control",
+                "fn"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "spacevim_mode",
+                "value": 1
+              }
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "right_command"
             }
           ],
           "to_after_key_up": [
