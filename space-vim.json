@@ -254,9 +254,14 @@
               "value": 0
             },
             {
-              "type": "variable_if",
+              "type": "variable_unless",
               "name": "linewise_visual_mode",
-              "value": 0
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "linewise_visual_mode",
+              "value": -1
             }
           ]
         },
@@ -431,9 +436,14 @@
               "value": 0
             },
             {
-              "type": "variable_if",
+              "type": "variable_unless",
               "name": "linewise_visual_mode",
-              "value": 0
+              "value": 1
+            },
+            {
+              "type": "variable_unless",
+              "name": "linewise_visual_mode",
+              "value": -1
             }
           ]
         },
@@ -1830,6 +1840,12 @@
               "modifiers": [
                 "command"
               ]
+            },
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
+                "value": 2
+              }
             }
           ],
           "conditions": [
@@ -1938,6 +1954,18 @@
               "modifiers": [
                 "command"
               ]
+            },
+            {
+              "key_code": "delete_or_backspace",
+              "modifiers": [
+                "fn"
+              ]
+            },
+            {
+              "set_variable": {
+                "name": "linewise_visual_mode",
+                "value": 2
+              }
             }
           ],
           "conditions": [
@@ -2006,6 +2034,87 @@
               "type": "variable_if",
               "name": "spacevim_mode",
               "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "SpaceVIM: Space+p to paste.",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "linewise_visual_mode",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_arrow",
+              "modifiers": [
+                "command"
+              ]
+            },
+            {
+              "key_code": "return_or_enter"
+            },
+            {
+              "key_code": "v",
+              "modifiers": [
+                "command"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "variable_if",
+              "name": "spacevim_mode",
+              "value": 1
+            },
+            {
+              "type": "variable_if",
+              "name": "visual_mode",
+              "value": 0
+            },
+            {
+              "type": "variable_unless",
+              "name": "linewise_visual_mode",
+              "value": 0
             }
           ]
         }
