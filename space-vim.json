@@ -86,19 +86,19 @@
           "to": [
             {
               "set_variable": {
-                "name": "spacevim_off",
-                "value": 0
+                "name": "spacevim_on",
+                "value": 1
               }
             },
             {
-              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SpaceVIM ON --\"'"
+              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SPACEVIM ON --\"'"
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacevim_off",
-              "value": 1
+              "name": "spacevim_on",
+              "value": 0
             }
           ]
         },
@@ -119,19 +119,19 @@
           "to": [
             {
               "set_variable": {
-                "name": "spacevim_off",
-                "value": 1
+                "name": "spacevim_on",
+                "value": 0
               }
             },
             {
-              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SpaceVIM OFF --\"'"
+              "shell_command": "osascript -e 'display notification \"Press right command to toggle on/off\" with title \"-- SPACEVIM OFF --\"'"
             }
           ],
           "conditions": [
             {
               "type": "variable_if",
-              "name": "spacevim_off",
-              "value": 0
+              "name": "spacevim_on",
+              "value": 1
             }
           ]
         }
